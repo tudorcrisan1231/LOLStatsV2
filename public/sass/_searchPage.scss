@@ -1,0 +1,332 @@
+.bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 80%;
+    width: 75%;
+    overflow: hidden;
+    z-index: -1;
+    opacity: .5;
+    -webkit-box-shadow: 1px 2px 22px 7px rgba(0,0,0,0.22); 
+    box-shadow: 1px 2px 22px 7px rgba(0,0,0,0.22);
+
+    outline: 1px solid rgba(169,169,169,.3);
+    outline-offset: 1rem;
+
+    &__content {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    @media screen and (max-width: $bp-largest) {
+        display: none;
+    }
+}
+
+.bg-video-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: -2;
+    opacity: 1;
+    
+    filter: blur(5px);
+    //-webkit-filter: blur(.5rem);
+   //-moz-filter: blur(.5rem);
+   // -o-filter: blur(.5rem);
+  //  -ms-filter: blur(.5rem);
+    
+    opacity: .3;
+
+    &__content {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    @media screen and (max-width: $bp-largest) {
+        display: none;
+    }
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 80%;
+    width: 75%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    padding: 2rem;
+    
+
+    display: grid;
+    grid-template-rows: 40% min-content min-content;
+    grid-template-columns: repeat(auto-fit, minmax(37rem, 1fr));
+    gap: 5rem;
+    grid-auto-rows: min-content;
+
+
+    @media screen and (max-width: $bp-small) {
+        height: 90%;
+        width: 100%;
+    }
+
+    .search {
+        grid-column: 1/-1;
+        align-self: center;
+        justify-self: center;
+        max-width: 60rem;
+        width: 100%;
+
+        &_input {
+            display: flex;
+            flex-direction: row;
+
+            ::placeholder {
+                font-weight: bold;
+                opacity: 1; /* Firefox */
+                color: $color-paragraph;
+            }
+            
+            :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            font-weight: bold;
+            color: $color-paragraph;
+            }
+            
+            ::-ms-input-placeholder { /* Microsoft Edge */
+            font-weight: bold;
+            color: $color-paragraph;
+            }
+        }
+
+        &_save {
+            background-color: rgba(white, .8);
+            width: 100%;
+            height: auto;
+            transition: .2s all;
+            color: $color-violet;
+            padding: .3rem;
+            display: flex;
+            align-items: flex-start;
+            justify-content: start;
+
+            &_favorite {
+                width: 50%;
+            }
+            &_recent {
+                width: 50%;
+            }
+
+            &_profile {
+                font-size: 1.3rem;
+                margin-bottom: .7rem;
+                
+                a {
+                    text-decoration: none;
+                    color: inherit;
+
+                    display: flex;
+                    align-items: center;
+                }
+
+                &_name {
+                    overflow: hidden; /* make sure it hides the content that overflows */
+                    white-space: nowrap; /* don't break the line */
+                    text-overflow: ellipsis;
+                }
+            }
+        }
+ 
+
+        &_bar {
+            outline: none;
+            width: 85%;
+            height: 4rem;
+            border: none;
+            font-size: 1.6rem;
+            font-weight: bold;
+            font-family: inherit;
+            text-indent: 1rem;
+            border-left: 1px solid $color-primary;
+        }
+
+        &_btn {
+            outline: none;
+            width: 15%;
+            height: 4rem;
+            border: none;
+            cursor: pointer;
+            font-size: 2rem;
+            background-image: linear-gradient(to right bottom, $color-violet, $color-purple);
+            background-color: $color-violet;
+            color: $color-header;
+            font-family: inherit;
+            font-weight: bold;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            transition: all .1s;
+            
+            svg {
+                fill: $color-header;
+            }
+
+            &:hover {
+                background-image: linear-gradient(to right bottom, $color-purple, $color-purple);
+            }
+        }
+
+        &_region {
+            outline: none;
+            //background-image: linear-gradient(to right bottom, $color-violet, $color-purple);
+            //border-right: 1px solid $color-secondary;
+            border: none;
+            height: 4rem;
+            font-family: inherit;
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: $color-primary;
+            cursor: pointer;
+
+            option {
+                font-size: 1.4rem;
+                font-weight: bold;
+                color: $color-primary;
+            }
+
+            &_item {
+                background-image: linear-gradient(to right bottom, $color-violet, $color-purple);
+                cursor: pointer;
+                text-align: center;
+                padding: .3rem 1rem;
+
+                &:hover {
+                    background-image: linear-gradient(to right bottom, $color-purple, $color-purple);
+                }
+            }
+        }
+    }
+
+    .news {
+        &_title {
+            grid-column: 1/-1;
+            align-self: end;
+            justify-self: start;
+            font-size: 1.6rem;
+            color: $color-header;
+            font-weight: 300;
+            line-height: 1;
+        }
+
+        &_article {
+            align-self: center;
+            display: flex;
+            align-items: center;
+            //justify-content: center;
+            cursor: pointer;
+            text-decoration: none;
+
+            outline: 1px solid rgba(169,169,169,.3);
+            //outline: 1px solid rgba($color-aqua,.4);
+            outline-offset: -.5rem;
+
+            &_details {
+                margin-left: 1rem;
+            }
+
+            &_game {
+                font-size: 1.6rem;
+                text-transform: uppercase;
+                color: $color-header;
+            }
+
+            &_description {
+                font-size: 1.4rem;
+                color: $color-paragraph;
+            }
+
+            transition: all .2s;
+
+            &:hover {
+                .news_img {
+                    transform: scale(.9);
+                }
+                transform: translateY(-3px);
+                box-shadow: 1px 2px 22px 7px rgba(0,0,0,.3);
+                outline-offset: 0rem;
+            }
+            &:active {
+                transform: translateY(3px);
+                box-shadow: 1px 2px 22px 7px rgba(0,0,0,.6);
+            }
+        }
+
+
+
+        &_img {
+            width: 50%;
+            height: 50%;
+            object-fit: cover;
+            transition: all .2s;
+        }
+    }
+
+    .free_to_play {
+        grid-column: 1/-1;
+        width: 100%;
+        text-align: center;
+
+
+        &_title {
+            margin-bottom: 1rem;
+        }
+        
+        &_champs {
+            text-align: center;
+        }
+    }
+}
+
+
+
+
+.btn-text {
+    grid-column: 1/-1;
+    justify-self: center;
+    align-self: center;
+    color: $color-violet;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $color-violet;
+    padding: 3px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    transition: all .2s;
+    text-align: center;
+    cursor: pointer;
+    width: 12rem;
+    
+
+    &:hover {
+        background-color: $color-violet;
+        color: $color-header;
+        box-shadow: 0 1rem 2rem rgba($color-black, .15);
+    }
+
+    &:active {
+        box-shadow: 0 0.5rem 1rem rgba($color-black, .15);
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="img\ekko_logo.jpg">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i|Nunito:300,300i" rel="stylesheet">
+    <link rel="stylesheet" href="sass/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>LOLStatus ----- Ultimate league of legends stats</title>
+</head>
+<body>
+    <div class="container">
+        <div class="bg-video">
+            <video class="bg-video__content" autoplay="" muted="" loop="">
+                <source src="img/animated-zed-odyssey-intro.webm" type="video/mp4">
+                <source src="img/animated-zed-odyssey-intro.webm" type="video/webm">
+               Your browser is not supported!
+            </video>
+        </div>
+        <div class="bg-video-back">
+            <video class="bg-video-back__content" autoplay="" muted="" loop="">
+                <source src="img/animated-zed-odyssey-intro.webm" type="video/mp4">
+                <source src="img/animated-zed-odyssey-intro.webm" type="video/webm">
+               Your browser is not supported!
+            </video>
+        </div>
+        <div class="bg-photo"></div>
+
+    <div class="content">
+        <div class="search">
+
+            <form class="search_input">
+                <select name="region" id="search_region" class="search_region">
+                    <option class="search_region_item" value="eun1">EUNE</option>
+                    <option class="search_region_item" value="euw1">EUW</option>
+                    <option class="search_region_item" value="na1">NA</option>
+                    <option class="search_region_item" value="br1">BR</option>
+                    <option class="search_region_item" value="la1">LAN</option>
+                    <option class="search_region_item" value="la2">LAS</option>
+                    <option class="search_region_item" value="oc1">OCE</option>
+                    <option class="search_region_item" value="kr">KR</option>
+                    <option class="search_region_item" value="ru">RU</option>
+                    <option class="search_region_item" value="tr1">TR</option>
+                    <option class="search_region_item" value="jp1">JP</option>
+                </select>
+
+                <input type="text" class="search_bar" placeholder="Summoner name...">
+
+                <button class="search_btn" type="submit">
+                    <svg class="search_btn--icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16"><g><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0a5.5 5.5 0 0 1 11 0z"/></g></svg>
+                    <div class="loading search_btn--loader hidden"></div>
+                </button>
+            </form>
+            <div class="search_save hidden_opacity">
+                <div class="search_save_favorite">
+                    <h2 style="margin-bottom: 1rem;" class="profile_container__content__summary--name_svg_text"><svg class="profile_container__content__summary--name_svg_2 profile_container__content__summary--name_svg_3" data-tippy-content="Favorite" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false"  style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16"><g fill="rgb(95,158,160)"><path d="M2 2v13.5a.5.5 0 0 0 .74.439L8 13.069l5.26 2.87A.5.5 0 0 0 14 15.5V2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/></g></svg> Favorites: </h2>
+                </div>
+                <div class="search_save_recent">
+                    <h2 style="margin-bottom: 1rem;" class="profile_container__content__summary--name_svg_text"><svg class="profile_container__content__summary--name_svg_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false"  style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M14 12c0-1.1-.9-2-2-2s-2 .9-2 2s.9 2 2 2s2-.9 2-2zm-2-9a9 9 0 0 0-9 9H0l4 4l4-4H5c0-3.87 3.13-7 7-7s7 3.13 7 7a6.995 6.995 0 0 1-11.06 5.7l-1.42 1.44A9 9 0 1 0 12 3z" fill="rgb(95,158,160)"/></svg>Recent: </h2>
+                </div>
+            </div>
+
+           <!-- <div class="search_region">
+                <p class="search_region_item active" value="eune">EUNE</p>
+                <p class="search_region_item" value="euw">EUW</p>
+                <p class="search_region_item" value="na">NA</p>
+                <p class="search_region_item" value="br">BR</p>
+                <p class="search_region_item" value="lan">LAN</p>
+                <p class="search_region_item" value="las">LAS</p>
+                <p class="search_region_item" value="oce">OCE</p>
+                <p class="search_region_item" value="kr">KR</p>
+                <p class="search_region_item" value="ru">RU</p>
+                <p class="search_region_item" value="tr">TR</p>
+                <p class="search_region_item" value="jp">JP</p>
+            </div>-->
+
+        </div>
+
+        <div class="free_to_play">
+            <h3 class="news_title free_to_play_title">Free to play champion:</h3>
+            
+            <div class="free_to_play_champs">
+                <!--rotatia campionilor gratis, e in folderul js-->
+            </div>
+        </div>
+
+        <h3 class="news_title">League of legends news and useful links:</h3>
+        
+
+        <a class="news_article news_1" href="https://na.leagueoflegends.com/en-us/news/game-updates/patch-11-10-notes/" target="_blank">
+            <img src="img/LoL_Patch_11_10_Notes_Banner.jpg" alt="patch_notes" class="news_img">
+            <div class="news_article_details">
+                <h3 class="news_article_game asd1">League of Legends</h3>
+                <p class="news_article_description">Patch 11.10 notes</p>
+            </div>
+        </a>
+
+        <a class="news_article news_2" href="https://lolesports.com/schedule?leagues=msi,lec,lcs" target="_blank">
+            <img src="https://cdn1.dotesports.com/wp-content/uploads/2021/03/01091542/MSI-Cover.jpg" alt="msi2021" class="news_img">
+            <div class="news_article_details">
+                <h3 class="news_article_game">League of Legends</h3>
+                <p class="news_article_description">Watch MSI 2021 for drops</p>
+            </div>
+        </a>
+
+        <a class="news_article news_3" href="https://na.leagueoflegends.com/en-us/news/game-updates/teamfight-tactics-patch-11-10-notes/" target="_blank">
+            <img src="img/TFT_patch-notes.jpg" alt="tft_PATCH" class="news_img">
+            <div class="news_article_details">
+                <h3 class="news_article_game">TEAMFIGHT TACTICS</h3>
+                <p class="news_article_description">TFT patch 11.10 notes</p>
+            </div>
+        </a>
+
+        <a class="news_article news_4" href="https://wol.gg/" target="_blank">
+            <img src="img/wol.jpg" alt="wol.gg" class="news_img">
+            <div class="news_article_details">
+                <h3 class="news_article_game">League of legends</h3>
+                <p class="news_article_description">Check how much hours you spent in LOL</p>
+            </div>
+        </a>
+
+
+        <a class="news_article news_6" href="https://na.leagueoflegends.com/en-us/news/dev/ask-riot-is-aram-really-random/" target="_blank">
+            <img src="img/LoL_Patch_11_10_Notes_Banner.jpg" alt="aram_random" class="news_img">
+            <div class="news_article_details">
+                <h3 class="news_article_game">League of legends</h3>
+                <p class="news_article_description">Ask Riot: Is ARAM Really Random?</p>
+            </div>
+        </a>
+
+
+        <a class="news_article news_8" href="https://na.leagueoflegends.com/en-us/news/game-updates/teamfight-tactics-hyper-roll/" target="_blank">
+            <img src="img/TFT_patch-notes.jpg" alt="tft_hyperRoll" class="news_img">
+            <div class="news_article_details">
+                <h3 class="news_article_game">TEAMFIGHT TACTICS</h3>
+                <p class="news_article_description">Teamfight Tactics: Hyper Roll</p>
+            </div>
+        </a>
+
+        <a class="btn-text btn_view_more">View more &rarr;</a>
+
+        
+    </div>
+
+    </div>
+
+    <div class="profile_container hidden">
+        
+
+
+        <div class="btn_close">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512"><path d="M289.94 256l95-95A24 24 0 0 0 351 127l-95 95l-95-95a24 24 0 0 0-34 34l95 95l-95 95a24 24 0 1 0 34 34l95-95l95 95a24 24 0 0 0 34-34z"/></svg>
+        </div>
+
+        <div class="profile_container__content">
+            <div class="left-side">
+                <div class="profile_container__content__summary">
+
+                </div>
+
+                <button class="btn profile_container__content--btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M21 6h-7.59l3.29-3.29L16 2l-4 4l-4-4l-.71.71L10.59 6H3a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8a2 2 0 0 0-2-2zm0 14H3V8h18v12zM9 10v8l7-4z"/></svg>
+                    <p>Live Game</p>
+                </button>
+                
+        
+                <div class="profile_container__content__rank">
+
+                </div>
+        
+                <div class="profile_container__content__champion">
+                    <div class="profile_container__content__champion_search">
+                        <div class="profile_container__content__champion_search_inputBtn">
+                            <input type="search" class="profile_container__content__champion_search_input" placeholder="Search a champion">
+                            <button class="profile_container__content__champion_search_btn" type="submit">
+                                <svg class="search_btn--icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16"><g><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0a5.5 5.5 0 0 1 11 0z"/></g></svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="profile_container__content__champion_champ">
+                        <div class="profile_container__content__champion_champ_manual">
+                            
+                        </div>
+                        <div class="profile_container__content__champion_champ_auto">
+
+                        </div>
+                    </div>
+                    <div>
+                        <p style="margin-top: 1rem; margin-left: 1rem;"><spam style="font-weight: bold;">*</spam> last time when you played that champion</p>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="right-side">
+
+                <!--
+                <div class="liveGame__error">
+                    <h2 class="liveGame__error--name">'Sm03KeR' is not in an active game.</h2>
+                    <h3 class="liveGame__error--name">Please try again later if the summoner is currently in game.</h3>
+                </div>-->
+
+                
+                <div class="liveGame hidden">
+                    
+                    <!--  <div class="liveGame_details">
+                          <div class="liveGame_details-type">
+                              <div class="liveGame_details--type">Ranked Solo</div>
+                              <div class="liveGame_details--map">Summoner's Rift</div>
+                              <div class="liveGame_details--time">30:21</div>
+                              <button class="liveGame_details--refresh">
+                                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512"><path d="M320 146s24.36-12-64-12a160 160 0 1 0 160 160" fill="none" stroke="#626262" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32"/><path fill="none" stroke="#626262" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M256 58l80 80l-80 80"/></svg>
+                                  <p>Refresh</p>
+                              </button>
+                          </div>
+                          <div class="liveGame_details-ban">
+                              Ban
+                          </div>
+                      </div>
+  
+                      <div class="liveGame_teams liveGame_blue">
+                          <div class="liveGame_blue--team"></div>
+  
+                          <div class="liveGame--team">
+                              
+                              <div class="liveGame--players">
+                                  <div class="liveGame--players_basic">
+                                      <div class="liveGame--players-icon"><img src="http://ddragon.leagueoflegends.com/cdn/11.10.1/img/champion/Sion.png" alt="champ"></div>
+                                      <div class="liveGame--players-spell">
+                                          <div class="liveGame--players-spell_1"><img src="http://ddragon.leagueoflegends.com/cdn/11.10.1/img/spell/SummonerFlash.png" alt="spell1"></div>
+                                          <div class="liveGame--players-spell_2"><img src="http://ddragon.leagueoflegends.com/cdn/11.10.1/img/spell/SummonerFlash.png" alt="spell2"></div>
+                                      </div>
+                                      <div class="liveGame--players-runes">
+                                          <div class="liveGame--players-runes_1"><img src="./img/perk-images/Styles/Domination/DarkHarvest/DarkHarvest.png" alt="runes"></div>
+                                          <div class="liveGame--players-runes_2"><img src="./img/Styles/7202_Sorcery.png" alt="runes"></div>
+                                      </div>
+                                      <div class="liveGame--players-name">Sm03KeR</div>
+                                  </div>
+  
+                                  <div class="liveGame--players-rank">
+                                      <div class="liveGame--players-rank_icon"><img src="./img/DIAMOND.png" alt="rank"></div>
+                                      <div class="liveGame--players-rank_name">Diamond 3 (52 LP)</div>
+                                  </div>
+                                  <div class="liveGame--players-wr">56% (323 Played)</div>
+                                  <div class="liveGame--players-fullRunes">
+                                      <div class="liveGame--players-fullRunes_btn">Runes</div>
+                                  </div>
+                                  <div class="liveGame--players-ban">
+                                      <img src="http://ddragon.leagueoflegends.com/cdn/11.10.1/img/champion/Jinx.png" alt="ban">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+  
+  
+                      <div class="liveGame_teams liveGame_red">
+                          <div class="liveGame_red--team"></div>
+  
+                          <div class="liveGame--team">
+                              <div class="liveGame--players">
+                                  <div class="liveGame--players_basic">
+                                      <div class="liveGame--players-icon"><img src="http://ddragon.leagueoflegends.com/cdn/11.10.1/img/champion/Sion.png" alt="champ"></div>
+                                      <div class="liveGame--players-spell">
+                                          <div class="liveGame--players-spell_1"><img src="http://ddragon.leagueoflegends.com/cdn/11.10.1/img/spell/SummonerFlash.png" alt="spell1"></div>
+                                          <div class="liveGame--players-spell_2"><img src="http://ddragon.leagueoflegends.com/cdn/11.10.1/img/spell/SummonerFlash.png" alt="spell2"></div>
+                                      </div>
+                                      <div class="liveGame--players-runes">
+                                          <div class="liveGame--players-runes_1"><img src="./img/perk-images/Styles/Domination/DarkHarvest/DarkHarvest.png" alt="runes"></div>
+                                          <div class="liveGame--players-runes_2"><img src="./img/Styles/7202_Sorcery.png" alt="runes"></div>
+                                      </div>
+                                      <div class="liveGame--players-name">Sm03KeR</div>
+                                  </div>
+  
+                                  <div class="liveGame--players-rank">
+                                      <div class="liveGame--players-rank_icon"><img src="./img/DIAMOND.png" alt="rank"></div>
+                                      <div class="liveGame--players-rank_name">Diamond 3 (52 LP)</div>
+                                  </div>
+                                  <div class="liveGame--players-wr">56% (323 Played)</div>
+                                  <div class="liveGame--players-fullRunes">
+                                      <div class="liveGame--players-fullRunes_btn">Runes</div>
+                                  </div>
+                                  <div class="liveGame--players-ban">
+                                      <img src="http://ddragon.leagueoflegends.com/cdn/11.10.1/img/champion/Jinx.png" alt="ban">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                          <div class="loading search_btn--loader"></div>-->
+                  </div>
+
+
+
+                <div class="profile_container__content__general-status">
+                    <div class="general_queue">
+                        <div class="general_queue_types">
+                            <div class="general_queue_type general_queue_all general_queue_types_active">All</div>
+                            <div class="general_queue_type general_queue_solo">Ranked Solo</div>
+                            <div class="general_queue_type general_queue_flex">Ranked Flex</div>
+                            <div class="general_queue_type general_queue_draft">Normal (draft)</div>
+                            <div class="general_queue_type general_queue_blind">Normal (blind)</div>
+                            <div class="general_queue_type general_queue_aram">ARAM</div>
+                            <div class="general_queue_type general_queue_mode">Event Game</div>
+                        </div>
+                    </div>
+                    <div class="general"></div>
+                </div>
+               
+                
+                
+
+
+
+
+                <div class="profile_container__content__match-history">
+                    
+                  
+                    <!--
+                    <div class="match">
+                        <div class="match__type">
+                            <p class="match__type--name">Normal</p>
+                            <p class="match__type--time">4 days ago</p>
+                            <p class="match__type--result">Victory</p>
+                            <p class="match__type--duration">21ms 23s</p>
+                        </div>
+
+                        <div class="match__champ">
+                            <img src="http://ddragon.leagueoflegends.com/cdn/11.10.1/img/champion/Aatrox.png" alt="champ_icon" class="match__champ--icon">
+                            <p class="match__champ--name">Aatrox</p>
+                        </div>
+
+                        <div class="match__utility">
+                            <div class="match__utility__spell">
+                                <img src="http://ddragon.leagueoflegends.com/cdn/11.10.1/img/spell/SummonerFlash.png" alt="spell1" class="match__utility__spell--icon1">
+                                <img src="http://ddragon.leagueoflegends.com/cdn/11.10.1/img/spell/SummonerDot.png" alt="spell2" class="match__utility__spell--icon2">
+                            </div>
+    
+                            <div class="match__utility__runes">
+                                <img src="./img/Styles/Domination/Electrocute/Electrocute.png" alt="runes1" class="match__utility__runes--icon1">
+                                <img src="./img/Styles/7202_Sorcery.png" alt="runes2" class="match__utility__runes--icon2">
+                            </div>         
+                        </div>
+
+                        <div class="match__score">
+                            <p class="match__score--nr">12 / 3 / 4</p>
+                            <p class="match__score--kda">3.5 KDA</p>
+                        </div>
+
+                        <div class="match__stats">
+                            <p class="match__stats--level">Level 16</p>
+                            <p class="match__stats--cs">203 (8.3/min) CS</p>
+                            <p class="match__stats--kp">P/Kill 63%</p>
+                        </div>
+
+                        <div class="match__items">
+                            <div class="match__items--line1">
+                                <p class="match__items-item match__items--item1"><img src="http://ddragon.leagueoflegends.com/cdn/11.10.1/img/item/3026.png" alt="item"></p>
+                                <p class="match__items-item match__items--item2"><img src="http://ddragon.leagueoflegends.com/cdn/11.10.1/img/item/3066.png" alt="item"></p>
+                                <p class="match__items-item match__items--item3"><img src="http://ddragon.leagueoflegends.com/cdn/11.10.1/img/item/3165.png" alt="item"></p>
+
+                            </div>
+                            
+                            <div class="match__items--line2">
+                                <p class="match__items-item match__items--item4"><img src="http://ddragon.leagueoflegends.com/cdn/11.10.1/img/item/1037.png" alt="item"></p>
+                                <p class="match__items-item match__items--item5"><img src="http://ddragon.leagueoflegends.com/cdn/11.10.1/img/item/2139.png" alt="item"></p>
+                                <p class="match__items-item match__items--item6"><img src="http://ddragon.leagueoflegends.com/cdn/11.10.1/img/item/2419.png" alt="item"></p>
+                                <p class="match__items-item match__items--item-ward"><img src="http://ddragon.leagueoflegends.com/cdn/11.10.1/img/item/1001.png" alt="item" style="border-radius: 50%;"></p>
+
+                            </div>
+
+                            
+                            <p class="match__items--control-ward">Vision score: 24</p>
+                        </div>
+
+                        <div class="match__players">
+                            <div class="match__players--blue">
+                                <div class="match__players--player match__players--1">
+                                    <img src="http://ddragon.leagueoflegends.com/cdn/11.10.1/img/champion/Aatrox.png" alt="champ_icon" class="match__players--icon">
+                                    <p class="match__players--name">Sm03KeR</p>
+                                </div>
+                                <div class="match__players--player match__players--2">
+                                    <img src="http://ddragon.leagueoflegends.com/cdn/11.10.1/img/champion/Aatrox.png" alt="champ_icon" class="match__players--icon">
+                                    <p class="match__players--name">Sm03KeR</p>
+                                </div>
+                                <div class="match__players--player match__players--3">
+                                    <img src="http://ddragon.leagueoflegends.com/cdn/11.10.1/img/champion/Aatrox.png" alt="champ_icon" class="match__players--icon">
+                                    <p class="match__players--name">Sm03KeR</p>
+                                </div>
+                                <div class="match__players--player match__players--4">
+                                    <img src="http://ddragon.leagueoflegends.com/cdn/11.10.1/img/champion/Aatrox.png" alt="champ_icon" class="match__players--icon">
+                                    <p class="match__players--name">Sm03KeR</p>
+                                </div>
+                                <div class="match__players--player match__players--5">
+                                    <img src="http://ddragon.leagueoflegends.com/cdn/11.10.1/img/champion/Aatrox.png" alt="champ_icon" class="match__players--icon">
+                                    <p class="match__players--name">Sm03KeR</p>
+                                </div>
+                            </div>
+                            
+                            <div class="match__players--red">
+                                <div class="match__players--player match__players--6">
+                                    <img src="http://ddragon.leagueoflegends.com/cdn/11.10.1/img/champion/Aatrox.png" alt="champ_icon" class="match__players--icon">
+                                    <p class="match__players--name">Sm03KeR</p>
+                                </div>
+                                <div class="match__players--player match__players--7">
+                                    <img src="http://ddragon.leagueoflegends.com/cdn/11.10.1/img/champion/Aatrox.png" alt="champ_icon" class="match__players--icon">
+                                    <p class="match__players--name">Sm03KeR</p>
+                                </div>
+                                <div class="match__players--player match__players--8">
+                                    <img src="http://ddragon.leagueoflegends.com/cdn/11.10.1/img/champion/Aatrox.png" alt="champ_icon" class="match__players--icon">
+                                    <p class="match__players--name">Sm03KeR</p>
+                                </div>
+                                <div class="match__players--player match__players--9">
+                                    <img src="http://ddragon.leagueoflegends.com/cdn/11.10.1/img/champion/Aatrox.png" alt="champ_icon" class="match__players--icon">
+                                    <p class="match__players--name">Sm03KeR</p>
+                                </div>
+                                <div class="match__players--player match__players--10">
+                                    <img src="http://ddragon.leagueoflegends.com/cdn/11.10.1/img/champion/Aatrox.png" alt="champ_icon" class="match__players--icon">
+                                    <p class="match__players--name">Sm03KeR</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <button class="match__extend">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M6 7l6 6l6-6l2 2l-8 8l-8-8z" fill="#626262" fill-rule="evenodd"/></svg>
+                        </button>
+                    </div>
+                    -->
+                </div>
+            </div>
+    
+        </div>
+        <div class="profile_container__content_error hidden">
+            
+        </div>
+    </div>
+
+
+
+
+    <!-- Development -->
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+
+    <!-- Production -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+
+    <script src="js/controller.js"></script>
+</body>
+</html>

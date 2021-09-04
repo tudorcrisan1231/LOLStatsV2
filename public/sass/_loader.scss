@@ -1,0 +1,23 @@
+.loading {
+    height: 0;
+    width: 0;
+    padding: 1rem;
+    border: .3rem solid #ccc;
+    border-right-color: $color-secondary;
+    border-radius: 50%;
+    -webkit-animation: rotate 1.3s infinite linear;
+    animation: rotate 1.3s infinite linear;
+    /* left, top and position just for the demo! */
+    //position: absolute;
+    //left: 50%;
+    //top: 50%;
+  }
+  
+  @-webkit-keyframes rotate {
+    /* 100% keyframe for  clockwise. 
+       use 0% instead for anticlockwise */
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }

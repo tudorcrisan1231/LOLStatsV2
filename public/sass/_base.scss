@@ -1,0 +1,78 @@
+$color-grey-light-1: #f9f7f6;
+$color-grey-light-2: #aaa;
+
+$color-grey-dark-1: #54483A;
+$color-grey-dark-2: #6D5D4B;
+
+$color-black: black;
+
+$color-primary: #16161a;
+$color-secondary: #72757e;
+$color-header: #fffffe;
+$color-paragraph: #B1B3B3FF;
+
+
+$color-violet: rgb(95,158,160);  //main color for important text
+$color-purple: rgb(95,158,160);  //main color
+
+//$color-violet:  #732C7B;
+//$color-purple:  #421C52;
+$color-aqua: #B4FEE7;
+
+$color-profile-primary: rgb(24,24,24);
+$color-profile-secondary: rgb(34,34,34);
+
+$color-win: green;
+$color-lose: red;
+
+:root {
+    --color-green: 0,128,0;
+    --color-win: darkgreen;
+}
+
+$color-site: lightgray;
+
+
+$bp-largest: 75em; // 1200 / 16 = 75em 
+$bp-large: 62.5em; // 1000px
+$bp-medium: 50em; //800px
+$bp-small: 37.5em; //600px;
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;  // 1rem = 10px;
+    scroll-behavior: smooth;
+    overflow: hidden;
+
+    @media only screen and(max-width: $bp-largest) {
+        font-size: 50%;
+    }
+}
+
+body {
+    background-color: black;
+    font-family: 'Poppins', sans-serif;
+    color: $color-site;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    /* Start https://www.cursors-4u.com */ cursor: url(https://cur.cursors-4u.net/games/gam-14/gam1340.cur), auto !important;/* End https://www.cursors-4u.com */
+}
+.bg-photo {
+    @media screen and (max-width: $bp-largest) {
+        background-image: url("/img/zed_back.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        min-height: 100vh;
+        min-width: 100vw;
+        filter: blur(5px);
+    }
+}
